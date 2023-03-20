@@ -1,10 +1,10 @@
-FROM fedora:30
+FROM fedora:37
 
 RUN dnf update -y && \
-    dnf install -y make gcc-gfortran findutils wget htop yum-plugin-ovl \
-                   gnuplot python tk tkinter python-imaging-tk \
+    dnf install -y make gcc-gfortran findutils wget htop  \
+                   gnuplot python3 tk python3-tkinter  \
 		   which less emacs \
-                   python2-pip python2-scipy python2-numpy desktop-file-utils && \
+                   python3-pip python3-scipy python3-numpy desktop-file-utils && \
     dnf clean all && \
     pip install -U pydicom
     
